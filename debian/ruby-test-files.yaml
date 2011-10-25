@@ -1,0 +1,22 @@
+--- 
+- spec/command_spec.rb
+- spec/connection_spec.rb
+- spec/encoding_spec.rb
+- spec/error/sql_error_spec.rb
+- spec/reader_spec.rb
+- spec/result_spec.rb
+- spec/spec_helper.rb
+- spec/typecast/array_spec.rb
+- spec/typecast/bigdecimal_spec.rb
+- spec/typecast/boolean_spec.rb
+- spec/typecast/byte_array_spec.rb
+- spec/typecast/class_spec.rb
+- spec/typecast/date_spec.rb
+- spec/typecast/datetime_spec.rb
+- spec/typecast/float_spec.rb
+- spec/typecast/integer_spec.rb
+- spec/typecast/nil_spec.rb
+- spec/typecast/other_spec.rb
+- spec/typecast/range_spec.rb
+- spec/typecast/string_spec.rb
+- spec/typecast/time_spec.rb

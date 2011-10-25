@@ -1,0 +1,172 @@
+--- !ruby/object:Gem::Specification 
+name: do_mysql
+version: !ruby/object:Gem::Version 
+  hash: 57
+  prerelease: 
+  segments: 
+  - 0
+  - 10
+  - 7
+  version: 0.10.7
+platform: ruby
+authors: 
+- Dirkjan Bussink
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2011-03-29 00:00:00 Z
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: data_objects
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - "="
+      - !ruby/object:Gem::Version 
+        hash: 57
+        segments: 
+        - 0
+        - 10
+        - 7
+        version: 0.10.7
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: rspec
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ~>
+      - !ruby/object:Gem::Version 
+        hash: 9
+        segments: 
+        - 2
+        - 5
+        version: "2.5"
+  type: :development
+  version_requirements: *id002
+- !ruby/object:Gem::Dependency 
+  name: rake-compiler
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ~>
+      - !ruby/object:Gem::Version 
+        hash: 5
+        segments: 
+        - 0
+        - 7
+        version: "0.7"
+  type: :development
+  version_requirements: *id003
+description: Implements the DataObjects API for MySQL
+email: d.bussink@gmail.com
+executables: []
+
+extensions: 
+- ext/do_mysql/extconf.rb
+extra_rdoc_files: 
+- ChangeLog.markdown
+- LICENSE
+- README.markdown
+files: 
+- ChangeLog.markdown
+- LICENSE
+- README.markdown
+- Rakefile
+- ext/do_mysql/compat.h
+- ext/do_mysql/do_common.c
+- ext/do_mysql/do_common.h
+- ext/do_mysql/do_mysql.c
+- ext/do_mysql/error.h
+- ext/do_mysql/extconf.rb
+- ext/do_mysql/mysql_compat.h
+- lib/do_mysql.rb
+- lib/do_mysql/encoding.rb
+- lib/do_mysql/transaction.rb
+- lib/do_mysql/version.rb
+- spec/command_spec.rb
+- spec/connection_spec.rb
+- spec/encoding_spec.rb
+- spec/error/sql_error_spec.rb
+- spec/reader_spec.rb
+- spec/result_spec.rb
+- spec/spec_helper.rb
+- spec/typecast/array_spec.rb
+- spec/typecast/bigdecimal_spec.rb
+- spec/typecast/boolean_spec.rb
+- spec/typecast/byte_array_spec.rb
+- spec/typecast/class_spec.rb
+- spec/typecast/date_spec.rb
+- spec/typecast/datetime_spec.rb
+- spec/typecast/float_spec.rb
+- spec/typecast/integer_spec.rb
+- spec/typecast/nil_spec.rb
+- spec/typecast/other_spec.rb
+- spec/typecast/range_spec.rb
+- spec/typecast/string_spec.rb
+- spec/typecast/time_spec.rb
+- tasks/compile.rake
+- tasks/release.rake
+- tasks/retrieve.rake
+- tasks/spec.rake
+- tasks/ssl.rake
+homepage: 
+licenses: []
+
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: dorb
+rubygems_version: 1.8.6
+signing_key: 
+specification_version: 3
+summary: DataObjects MySQL Driver
+test_files: 
+- spec/command_spec.rb
+- spec/connection_spec.rb
+- spec/encoding_spec.rb
+- spec/error/sql_error_spec.rb
+- spec/reader_spec.rb
+- spec/result_spec.rb
+- spec/spec_helper.rb
+- spec/typecast/array_spec.rb
+- spec/typecast/bigdecimal_spec.rb
+- spec/typecast/boolean_spec.rb
+- spec/typecast/byte_array_spec.rb
+- spec/typecast/class_spec.rb
+- spec/typecast/date_spec.rb
+- spec/typecast/datetime_spec.rb
+- spec/typecast/float_spec.rb
+- spec/typecast/integer_spec.rb
+- spec/typecast/nil_spec.rb
+- spec/typecast/other_spec.rb
+- spec/typecast/range_spec.rb
+- spec/typecast/string_spec.rb
+- spec/typecast/time_spec.rb

@@ -1,0 +1,2 @@
+0010_remove_rubygems_from_specs.patch
+0020_remove_loadpath_manipulation_in_specs.patch

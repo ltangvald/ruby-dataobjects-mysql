@@ -1,0 +1,61 @@
+ruby-dataobjects-mysql (0.10.7-1) unstable; urgency=low
+
+  * New upstream release
+  * Conversion to gem2deb packaging
+    + rename source and binary packages
+  * Apply 0010_remove_rubygems_from_specs.patch
+  * Apply 0020_remove_loadpath_manipulation_in_specs.patch
+  * Add debian/start_mysqld_and_auto_install.sh to start mysqld before
+    installing and running the test suite
+  * override lintian warning about duplicate description for transitional
+    packages
+  * Add myself as an uploader
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Tue, 25 Oct 2011 23:51:22 +0200
+
+libdataobjects-mysql-ruby (0.10.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/watch
+      + updated from alioth gemwatch.
+  * debian/control
+      + corrected typo error.
+      + updated depends to libddataobjects-ruby1.9 to 1.9.1.
+
+ -- Deepak Tripathi <apenguinlinux@gmail.com>  Mon, 31 May 2010 22:28:01 +0530
+
+libdataobjects-mysql-ruby (0.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bumped standard version
+  * Update debian/copyright
+  * Added debian/source/format
+  * Modified debian/watch for .gem
+  * Ported to ruby1.9.1
+  * debian/control
+     + added DM-Upload field.
+     + added Homepage and Vcs-* entry
+     + keeping under pkg-ruby-extras group. 
+     + taking over from Sebestien.
+
+ -- Deepak Tripathi <apenguinlinux@gmail.com>  Sat, 08 May 2010 01:18:17 +0530
+
+libdataobjects-mysql-ruby (0.9.11-1) unstable; urgency=low
+
+  * New upstream release (Closes: #542300).
+  * Added debian/watch file.
+  * Conform to latest policy.
+
+ -- Sebastien Delafond <seb@debian.org>  Wed, 19 Aug 2009 11:41:01 +0200
+
+libdataobjects-mysql-ruby (0.2.4-2) unstable; urgency=low
+
+  * Depend on libdataobjects-ruby.
+
+ -- Sebastien Delafond <seb@debian.org>  Mon, 12 May 2008 15:18:41 -0700
+
+libdataobjects-mysql-ruby (0.2.4-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Sebastien Delafond <seb@debian.org>  Mon, 12 May 2008 14:57:06 -0700

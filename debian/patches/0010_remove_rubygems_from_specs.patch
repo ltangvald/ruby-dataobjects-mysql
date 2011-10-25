@@ -1,0 +1,15 @@
+Description: remove requirement on rubygems in spec_helper
+Author: Cédric Boutillier <cedric.boutillier@gmail.com>
+Last-Update: 2011-10-26
+
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -1,7 +1,7 @@
+ $TESTING=true
+ JRUBY = RUBY_PLATFORM =~ /java/
+ 
+-require 'rubygems'
++#require 'rubygems'
+ require 'rspec'
+ require 'date'
+ require 'ostruct'

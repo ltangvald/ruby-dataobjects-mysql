@@ -1,0 +1,29 @@
+Description: remove $LOAD_PATH manipulation in specs
+ They should use the copy installed in debian/
+Author: Cédric Boutillier <cedric.boutillier@gmail.com>
+Last-Update: 2011-11-03
+
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -9,15 +9,15 @@
+ require 'win32console' if RUBY_PLATFORM =~ /mingw|mswin/
+ 
+ driver_lib = File.expand_path('../../lib', __FILE__)
+-$LOAD_PATH.unshift(driver_lib) unless $LOAD_PATH.include?(driver_lib)
++#$LOAD_PATH.unshift(driver_lib) unless $LOAD_PATH.include?(driver_lib)
+ 
+ # Prepend data_objects/do_jdbc in the repository to the load path.
+ # DO NOT USE installed gems, except when running the specs from gem.
+-repo_root = File.expand_path('../../..', __FILE__)
+-(['data_objects'] << ('do_jdbc' if JRUBY)).compact.each do |lib|
+-  lib_path = "#{repo_root}/#{lib}/lib"
+-  $LOAD_PATH.unshift(lib_path) if File.directory?(lib_path) && !$LOAD_PATH.include?(lib_path)
+-end
++#repo_root = File.expand_path('../../..', __FILE__)
++#(['data_objects'] << ('do_jdbc' if JRUBY)).compact.each do |lib|
++#  lib_path = "#{repo_root}/#{lib}/lib"
++#  $LOAD_PATH.unshift(lib_path) if File.directory?(lib_path) && !$LOAD_PATH.include?(lib_path)
++#end
+ 
+ require 'data_objects'
+ require 'data_objects/spec/setup'
