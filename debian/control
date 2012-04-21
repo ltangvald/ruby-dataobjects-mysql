@@ -4,8 +4,8 @@ Priority: optional
 Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
 Uploaders: Deepak Tripathi <deepak@debian.org>, Cédric Boutillier <cedric.boutillier@gmail.com>
 DM-Upload-Allowed: yes
-Build-Depends: debhelper (>= 7.0.50~), gem2deb (>= 0.2.10~), libmysqlclient-dev (>= 5.1), mysql-server-5.1, ruby-dataobjects (>= 0.10.7~), ruby-rspec (>= 2.5)
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 7.0.50~), gem2deb (>= 0.2.10~), libmysqlclient-dev (>= 5.1), mysql-server-5.1, ruby-dataobjects (>= 0.10.8~), ruby-rspec (>= 2.5), rake
+Standards-Version: 3.9.3
 Vcs-Git: git://git.debian.org/pkg-ruby-extras/ruby-dataobjects-mysql.git
 Vcs-Browser: http://git.debian.org/?p=pkg-ruby-extras/ruby-dataobjects-mysql.git;a=summary
 Homepage: https://github.com/datamapper/do
@@ -14,7 +14,7 @@ XS-Ruby-Versions: all
 Package: ruby-dataobjects-mysql
 Architecture: any
 XB-Ruby-Versions: ${ruby:Versions}
-Depends: ${shlibs:Depends}, ${misc:Depends}, ruby | ruby-interpreter, ruby-dataobjects (>= 0.10.7~)
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby | ruby-interpreter, ruby-dataobjects (>= 0.10.8~)
 Replaces: libdataobjects-mysql-ruby1.8 (<< 0.10.7-1~), libdataobjects-mysql-ruby1.9.1 (<< 0.10.7-1~), libdataobjects-mysql-ruby (<< 0.10.7-1~)
 Breaks: libdataobjects-mysql-ruby1.8 (<< 0.10.7-1~), libdataobjects-mysql-ruby1.9.1 (<< 0.10.7-1~), libdataobjects-mysql-ruby (<< 0.10.7-1~)
 Provides: libdataobjects-mysql-ruby1.8, libdataobjects-mysql-ruby1.9.1, libdataobjects-mysql-ruby
