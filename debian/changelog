@@ -1,3 +1,11 @@
+ruby-dataobjects-mysql (0.10.8-3) unstable; urgency=low
+
+  * Build-depend on ruby-dataobjects >= 0.10.8-3~ to ensure that the shared
+    spec using asynchronous operations is deactivated for all arches, as it
+    currently fails on hurd-i386 and kfreebsd-i386
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Thu, 24 May 2012 00:45:11 +0200
+
 ruby-dataobjects-mysql (0.10.8-2) unstable; urgency=low
 
   * Do not build-depend on a particular version of mysql.

@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
 Uploaders: Deepak Tripathi <deepak@debian.org>, Cédric Boutillier <cedric.boutillier@gmail.com>
 DM-Upload-Allowed: yes
-Build-Depends: debhelper (>= 7.0.50~), gem2deb (>= 0.2.10~), libmysqlclient-dev, mysql-server, ruby-dataobjects (>= 0.10.8~), ruby-rspec (>= 2.5), rake
+Build-Depends: debhelper (>= 7.0.50~), gem2deb (>= 0.2.10~), libmysqlclient-dev, mysql-server, ruby-dataobjects (>= 0.10.8-3~), ruby-rspec (>= 2.5), rake
 Standards-Version: 3.9.3
 Vcs-Git: git://git.debian.org/pkg-ruby-extras/ruby-dataobjects-mysql.git
 Vcs-Browser: http://git.debian.org/?p=pkg-ruby-extras/ruby-dataobjects-mysql.git;a=summary
