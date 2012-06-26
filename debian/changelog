@@ -1,3 +1,9 @@
+ruby-dataobjects-mysql (0.10.8-4) unstable; urgency=low
+
+  * Bump build dependency on gem2deb to >= 0.3.0~
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Tue, 26 Jun 2012 08:20:09 +0200
+
 ruby-dataobjects-mysql (0.10.8-3) unstable; urgency=low
 
   * Build-depend on ruby-dataobjects >= 0.10.8-3~ to ensure that the shared
