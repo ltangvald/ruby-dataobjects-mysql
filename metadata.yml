@@ -1,13 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: do_mysql
 version: !ruby/object:Gem::Version 
-  hash: 39
-  prerelease: 
-  segments: 
-  - 0
-  - 10
-  - 8
-  version: 0.10.8
+  version: 0.10.13
 platform: ruby
 authors: 
 - Dirkjan Bussink
@@ -15,36 +9,25 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2011-03-29 00:00:00 Z
+date: 2013-05-27 00:00:00 Z
 dependencies: 
 - !ruby/object:Gem::Dependency 
   name: data_objects
   prerelease: false
   requirement: &id001 !ruby/object:Gem::Requirement 
-    none: false
     requirements: 
     - - "="
       - !ruby/object:Gem::Version 
-        hash: 39
-        segments: 
-        - 0
-        - 10
-        - 8
-        version: 0.10.8
+        version: 0.10.13
   type: :runtime
   version_requirements: *id001
 - !ruby/object:Gem::Dependency 
   name: rspec
   prerelease: false
   requirement: &id002 !ruby/object:Gem::Requirement 
-    none: false
     requirements: 
     - - ~>
       - !ruby/object:Gem::Version 
-        hash: 9
-        segments: 
-        - 2
-        - 5
         version: "2.5"
   type: :development
   version_requirements: *id002
@@ -52,14 +35,9 @@ dependencies:
   name: rake-compiler
   prerelease: false
   requirement: &id003 !ruby/object:Gem::Requirement 
-    none: false
     requirements: 
     - - ~>
       - !ruby/object:Gem::Version 
-        hash: 5
-        segments: 
-        - 0
-        - 7
         version: "0.7"
   type: :development
   version_requirements: *id003
@@ -118,33 +96,26 @@ files:
 homepage: 
 licenses: []
 
+metadata: {}
+
 post_install_message: 
 rdoc_options: []
 
 require_paths: 
 - lib
 required_ruby_version: !ruby/object:Gem::Requirement 
-  none: false
   requirements: 
-  - - ">="
+  - &id004 
+    - ">="
     - !ruby/object:Gem::Version 
-      hash: 3
-      segments: 
-      - 0
       version: "0"
 required_rubygems_version: !ruby/object:Gem::Requirement 
-  none: false
   requirements: 
-  - - ">="
-    - !ruby/object:Gem::Version 
-      hash: 3
-      segments: 
-      - 0
-      version: "0"
+  - *id004
 requirements: []
 
 rubyforge_project: dorb
-rubygems_version: 1.8.14
+rubygems_version: 2.0.3
 signing_key: 
 specification_version: 3
 summary: DataObjects MySQL Driver

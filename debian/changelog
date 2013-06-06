@@ -1,3 +1,18 @@
+ruby-dataobjects-mysql (0.10.13-1) unstable; urgency=low
+
+  * New upstream version
+  * debian/control: 
+    + remove obsolete DM-Upload-Allowed flag
+    + use canonical URI in Vcs-* fields
+    + drop transitional packages
+    + bump Standards-Version to 3.9.4 (no changes needed)
+    + update my email address
+    + update version dependency for ruby-dataobjects
+  * debian/copyright: update my email address and years
+  * remove lintian overrides, about transitional packages
+
+ -- Cédric Boutillier <boutil@debian.org>  Thu, 06 Jun 2013 23:02:05 +0200
+
 ruby-dataobjects-mysql (0.10.8-4) unstable; urgency=low
 
   * Bump build dependency on gem2deb to >= 0.3.0~

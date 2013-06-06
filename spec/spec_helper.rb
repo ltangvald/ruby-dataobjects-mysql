@@ -45,7 +45,7 @@ CONFIG.ssl      = SSLHelpers.query(:ca_cert, :client_cert, :client_key)
 
 CONFIG.driver       = 'mysql'
 CONFIG.jdbc_driver  = DataObjects::Mysql.const_get('JDBC_DRIVER') rescue nil
-CONFIG.uri          = ENV["DO_MYSQL_SPEC_URI"] || "#{CONFIG.scheme}://#{CONFIG.user_info}#{CONFIG.host}:#{CONFIG.port}#{CONFIG.database}"
+CONFIG.uri          = ENV["DO_MYSQL_SPEC_URI"] || "#{CONFIG.scheme}://#{CONFIG.user_info}#{CONFIG.host}:#{CONFIG.port}#{CONFIG.database}?zeroDateTimeBehavior=convertToNull"
 CONFIG.jdbc_uri     = "jdbc:#{CONFIG.uri}"
 CONFIG.sleep        = "SELECT sleep(1)"
 
@@ -60,6 +60,10 @@ module DataObjectsSpecHelpers
 
     conn.create_command(<<-EOF).execute_non_query
       DROP TABLE IF EXISTS `users`
+    EOF
+
+    conn.create_command(<<-EOF).execute_non_query
+      DROP TABLE IF EXISTS `stuff`
     EOF
 
     conn.create_command(<<-EOF).execute_non_query
@@ -79,6 +83,14 @@ module DataObjectsSpecHelpers
       CREATE TABLE `invoices` (
         `invoice_number` varchar(50) NOT NULL,
         PRIMARY KEY  (`invoice_number`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    EOF
+
+    conn.create_command(<<-EOF).execute_non_query
+      CREATE TABLE `stuff` (
+        `id` bigint NOT NULL auto_increment,
+        `value` varchar(50) NULL,
+        PRIMARY KEY  (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     EOF
 
