@@ -3,8 +3,14 @@ Section: ruby
 Priority: optional
 Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
 Uploaders: Deepak Tripathi <deepak@debian.org>, Cédric Boutillier <boutil@debian.org>
-Build-Depends: debhelper (>= 7.0.50~), gem2deb (>= 0.3.0~), libmysqlclient-dev, mysql-server, ruby-dataobjects (>= 0.10.13~), ruby-rspec (>= 2.5), rake
-Standards-Version: 3.9.4
+Build-Depends:
+ debhelper (>= 7.0.50~),
+ gem2deb (>= 0.3.0~),
+ libmysqlclient-dev,
+ mysql-server,
+ ruby-dataobjects (>= 0.10.14~),
+ ruby-rspec (>= 2.5),
+Standards-Version: 3.9.5
 Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-dataobjects-mysql.git
 Vcs-Browser: http://anonscm.debian.org/gitweb?p=pkg-ruby-extras/ruby-dataobjects-mysql.git;a=summary
 Homepage: https://github.com/datamapper/do
@@ -13,7 +19,7 @@ XS-Ruby-Versions: all
 Package: ruby-dataobjects-mysql
 Architecture: any
 XB-Ruby-Versions: ${ruby:Versions}
-Depends: ${shlibs:Depends}, ${misc:Depends}, ruby | ruby-interpreter, ruby-dataobjects (>= 0.10.13~)
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby | ruby-interpreter, ruby-dataobjects (>= 0.10.14~)
 Description: MySQL adapter for ruby-dataobjects
  The purpose of DataObjects.rb is to propose a single interface for Ruby to
  various databases. This package provides the adapter for MySQL to this
