@@ -22,3 +22,7 @@ override_dh_auto_install:
 # install upstream changelog
 override_dh_installchangelogs:
 	dh_installchangelogs ChangeLog.markdown
+
+override_dh_clean:
+	chmod -x debian/start_mysqld_and_auto_install.sh
+	dh_clean

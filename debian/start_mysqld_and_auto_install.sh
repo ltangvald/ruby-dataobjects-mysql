@@ -32,10 +32,13 @@ done
 mysql --socket=${MYSQL_UNIX_PORT} --execute "CREATE DATABASE ${DO_MYSQL_DBNAME};"
 mysql --socket=${MYSQL_UNIX_PORT} --execute "GRANT ALL PRIVILEGES ON ${DO_MYSQL_DBNAME}.* TO '${DO_MYSQL_USER}'@'localhost' IDENTIFIED BY '${DO_MYSQL_PASS}';"
 
+# Keep running so we can terminate mysqld.
+set +e
 
 dh_auto_install
+RC=$?
 
 /usr/bin/mysqladmin --socket=${MYSQL_UNIX_PORT} shutdown
 rm -rf ${MYTEMP_DIR}
 
-
+exit $RC

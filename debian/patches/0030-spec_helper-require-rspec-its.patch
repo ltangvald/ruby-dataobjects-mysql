@@ -1,0 +1,22 @@
+From: Antonio Terceiro <terceiro@debian.org>
+Date: Mon, 22 Jun 2015 08:06:38 -0300
+Subject: spec_helper: require rspec/its
+
+A new upstream version probably has this fixed, but I can't afford to
+update the entire ruby-dataobjects-* stack.
+---
+ spec/spec_helper.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/spec/spec_helper.rb b/spec/spec_helper.rb
+index eecaf55..1724231 100644
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -3,6 +3,7 @@ JRUBY = RUBY_PLATFORM =~ /java/
+ 
+ #require 'rubygems'
+ require 'rspec'
++require 'rspec/its'
+ require 'date'
+ require 'ostruct'
+ require 'fileutils'
