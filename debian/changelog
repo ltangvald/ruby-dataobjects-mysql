@@ -1,3 +1,18 @@
+ruby-dataobjects-mysql (0.10.16-1) unstable; urgency=medium
+
+  [ Balasankar C ]
+  * Team upload
+  * Imported new upstream version
+  * Bump Standards-Version to 3.9.6 (no changes)
+
+  [ Tomasz Nitecki ]
+  * Always shutdown mysqld, even if build fails.
+
+  [ Antonio Terceiro ]
+  * 0030-spec_helper-require-rspec-its.patch: load rspec/its (Closes: #791776)
+
+ -- Balasankar C <balasankarc@autistici.org>  Tue, 21 Jul 2015 22:53:23 +0530
+
 ruby-dataobjects-mysql (0.10.14-1) unstable; urgency=medium
 
   * Imported Upstream version 0.10.14
