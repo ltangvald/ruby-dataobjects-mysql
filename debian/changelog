@@ -1,3 +1,18 @@
+ruby-dataobjects-mysql (0.10.16-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Cédric Boutillier ]
+  * Remove version in the gem2deb build-dependency
+  * Use https:// in Vcs-* fields
+
+  [ Christian Hofstaedtler ]
+  * Switch to default-*mysql (Closes: #845905, #841583)
+  * Add Testsuite: autopkgtest-pkg-ruby (Closes: #830082)
+  * Bump Standards-Version to 3.9.8 and dh compat level to 10
+
+ -- Christian Hofstaedtler <zeha@debian.org>  Thu, 19 Jan 2017 22:44:26 +0000
+
 ruby-dataobjects-mysql (0.10.16-1) unstable; urgency=medium
 
   [ Balasankar C ]
