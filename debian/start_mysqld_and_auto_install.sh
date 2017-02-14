@@ -17,11 +17,11 @@ DO_MYSQL_PASS=
 DO_MYSQL_DBNAME=do_test
 DO_MYSQL_DATABASE=/${DO_MYSQL_DBNAME}
 
-mysql_install_db --no-defaults --datadir=${MYTEMP_DIR} --force --skip-name-resolve --user=${DO_MYSQL_USER}
+/usr/sbin/mysqld --no-defaults --initialize-insecure --datadir=${MYTEMP_DIR} --user=${ME}
 /usr/sbin/mysqld --no-defaults --user=${DO_MYSQL_USER} --socket=${MYSQL_UNIX_PORT} --datadir=${MYTEMP_DIR} --skip-networking &
 echo -n pinging mysqld.
 attempts=0
-while ! /usr/bin/mysqladmin --socket=${MYSQL_UNIX_PORT} ping ; do
+while ! /usr/bin/mysqladmin -uroot --socket=${MYSQL_UNIX_PORT} ping ; do
 	sleep 3
 	attempts=$((attempts+1))
 	if [ ${attempts} -gt 10 ] ; then
@@ -29,8 +29,8 @@ while ! /usr/bin/mysqladmin --socket=${MYSQL_UNIX_PORT} ping ; do
 		exit 0
 	fi
 done
-mysql --socket=${MYSQL_UNIX_PORT} --execute "CREATE DATABASE ${DO_MYSQL_DBNAME};"
-mysql --socket=${MYSQL_UNIX_PORT} --execute "GRANT ALL PRIVILEGES ON ${DO_MYSQL_DBNAME}.* TO '${DO_MYSQL_USER}'@'localhost' IDENTIFIED BY '${DO_MYSQL_PASS}';"
+mysql -uroot --socket=${MYSQL_UNIX_PORT} --execute "CREATE DATABASE ${DO_MYSQL_DBNAME};"
+mysql -uroot --socket=${MYSQL_UNIX_PORT} --execute "GRANT ALL PRIVILEGES ON ${DO_MYSQL_DBNAME}.* TO '${DO_MYSQL_USER}'@'localhost' IDENTIFIED BY '${DO_MYSQL_PASS}';"
 
 # Keep running so we can terminate mysqld.
 set +e
@@ -38,7 +38,7 @@ set +e
 dh_auto_install
 RC=$?
 
-/usr/bin/mysqladmin --socket=${MYSQL_UNIX_PORT} shutdown
+/usr/bin/mysqladmin -uroot --socket=${MYSQL_UNIX_PORT} shutdown
 rm -rf ${MYTEMP_DIR}
 
 exit $RC
