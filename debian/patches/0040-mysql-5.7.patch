@@ -1,0 +1,46 @@
+Description: Adds support for MySQL 5.7
+ This patch is taken with modifications from the dataobject github project.
+ The patch is needed because of altered behavior or  mysql_real_escape_string,
+ causing most tests to fail.
+Origin: backport, https://github.com/datamapper/do/commit/8e279caea3ce41d50d430a5d1764f8514943c813
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/ruby-dataobjects-mysql/+bug/1566858
+Forwarded: not-needed
+Last-Update: 2016-04-07
+
+--- a/ext/do_mysql/do_mysql.c
++++ b/ext/do_mysql/do_mysql.c
+@@ -1,5 +1,6 @@
+ #include <ruby.h>
+ #include <time.h>
++#include <sys/time.h>
+ #include <string.h>
+ 
+ #include <mysql.h>
+@@ -465,8 +466,15 @@
+   VALUE result;
+ 
+   // Escape 'source' using the current encoding in use on the conection 'db'
+-  quoted_length = mysql_real_escape_string(db, escaped + 1, source, source_len);
+-
++  #ifdef HAVE_MYSQL_REAL_ESCAPE_STRING_QUOTE
++    quoted_length = mysql_real_escape_string_quote(db, escaped + 1, source, source_len, '\'');
++  #else
++    quoted_length = mysql_real_escape_string(db, escaped + 1, source, source_len);
++  #endif
++  if (quoted_length == (unsigned long)-1) {
++    free(escaped);
++    rb_raise(rb_eArgError, "Failed to quote string. Make sure to (re)compile do_mysql against the correct libmysqlclient");
++  }
+   // Wrap the escaped string in single-quotes, this is DO's convention
+   escaped[0] = escaped[quoted_length + 1] = '\'';
+   // We don't want to use the internal encoding, because this needs
+--- a/ext/do_mysql/extconf.rb
++++ b/ext/do_mysql/extconf.rb
+@@ -80,6 +80,7 @@
+ have_func 'mysql_get_ssl_cipher', 'mysql.h'
+ have_func 'mysql_set_character_set', 'mysql.h'
+ have_func 'mysql_get_server_version', 'mysql.h'
++have_func 'mysql_real_escape_string_quote', 'mysql.h'
+ have_struct_member 'MYSQL_FIELD', 'charsetnr', 'mysql.h'
+ 
+ have_func('rb_thread_fd_select')
